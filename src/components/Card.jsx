@@ -12,7 +12,7 @@ export default function Card(props) {
       <h3>{props.name}</h3>
       <p className="card-text">Identificador: {props.uid}</p>
       <div className="d-flex justify-content-between">
-        <Link to={'/singlecharacters/' + props.uid} className="btn btn-outline-primary"> Conocer más </Link>
+        <Link to={`/${props.cardType}/${props.uid}`} className="btn btn-outline-primary"> Conocer más </Link>
         <button style={store.favoritos.includes(props.name) ? { backgroundColor: "#ffc107" } : {}} className="btn btn-outline-warning" onClick={() => dispatch({type: "add_favoritos", payload: {nombre: props.name}})}>❤</button>
       </div>
     </div>
