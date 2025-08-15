@@ -17,11 +17,10 @@ export const Personaje = props => {
       .then(res => res.json())
       .then(data => {
         setPersonaje(data.result)
-        console.log(data)
       })
       .catch(error => {
         console.log(error)
-
+        setPersonaje([])
       })
   }
 

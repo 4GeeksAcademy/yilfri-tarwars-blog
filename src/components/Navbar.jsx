@@ -15,8 +15,12 @@ export const Navbar = () => {
 						Favoritos ({store.favoritos.length})
 					</button>
 					<ul className="dropdown-menu">
-						{store.favoritos.map((favorito) => (
-							<li key={favorito}><a className="dropdown-item" href="#">{favorito}</a></li>
+						{store.favoritos.map((favorito, i) => (
+							<li key={i}>
+								<p className="dropdown-item d-flex justify-content-between" href="#">{favorito}
+									<a className="fw-bold text-danger text-decoration-none" style={{ cursor: "pointer" }} onClick={() => dispatch({type: "add_favoritos", payload: {nombre: favorito}})}>X</a>
+								</p>
+							</li>
 						))}
 
 					</ul>
